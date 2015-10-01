@@ -12,6 +12,9 @@ public class DiscountSale extends Sale {
 
 	public DiscountSale() {
 		/** 구현 하시오 **/
+		name = "No name yet";
+		price = 0;
+		discount = 0;
 	}
 
 	/**
@@ -30,8 +33,8 @@ public class DiscountSale extends Sale {
 			System.out.print("Discount is negative.");
 			System.exit(0);
 		} else {
-			super.name = theName;
-			super.price = thePrice;
+			name = theName;
+			price = thePrice;
 			discount = theDiscount;
 		}
 
@@ -39,6 +42,10 @@ public class DiscountSale extends Sale {
 
 	public DiscountSale(DiscountSale originalObject) {
 		/** 구현 하시오 **/
+		if (originalObject == null) {
+			System.out.println("Error: null originalObject.");
+			System.exit(0);
+		}
 
 	}
 
