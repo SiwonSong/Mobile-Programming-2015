@@ -45,6 +45,10 @@ public class DiscountSale extends Sale {
 		if (originalObject == null) {
 			System.out.println("Error: null originalObject.");
 			System.exit(0);
+		} else {
+			name = originalObject.name;
+			price = originalObject.price;
+			discount = originalObject.discount;
 		}
 
 	}
