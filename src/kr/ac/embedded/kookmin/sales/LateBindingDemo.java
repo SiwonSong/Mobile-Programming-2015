@@ -26,5 +26,6 @@ public class LateBindingDemo {
 			System.out.println("Deals are equal.");
 		else
 			System.out.println("Deals are not equal.");
+		
 	}
 }
