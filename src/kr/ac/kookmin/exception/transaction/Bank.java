@@ -2,6 +2,7 @@ package kr.ac.kookmin.exception.transaction;
 
 class Bank {
 	private int balance = 1000;
+	
 
 	public void oneqTrade() {
 		
@@ -11,45 +12,40 @@ class Bank {
 		tradeWithC();
 		System.out.println("잔여 금액 : " + balance); // 에러 발생시 잔여금액은 처음 금액과 같게 하고
 													// 싶다.
-		} catch(Exception e) {
+		} catch(Exception ex) {
 	    System.out.println("거래중 에러 발생, 전체 취소");
+	    cancelA();
+	    cancelB();
+	    cancelC();
+	    System.out.println("잔여 금액 : " + balance);
 		}
 	}
 
-	public void tradeWithA() {
+	public void tradeWithA() throws Exception {
 		int m = 100; // A계좌에서 출금할 금액
-		try {
+		
 			System.out.println("A 계좌에서 출금 - " + m);
 			balance -= m;
-		} catch (Exception e) {
-			System.out.println("A계좌 거래 에러 발생");
-			cancelA();
-		}
+		
 
 	}
 
-	public void tradeWithB() {
+	public void tradeWithB() throws Exception {
 		int m = 200;
-		try {
+		
 			System.out.println("B 계좌에서 출금 - " + m);
 			balance -= m;
-		} catch (Exception e) {
-			System.out.println("B계좌 거래 에러 발생");
-			cancelB();
-		}
+		
 	}
 
-	public void tradeWithC() {
+	public void tradeWithC() throws Exception {
 		int m = 300;
-		try {
+		
 			System.out.println("C 계좌에서 출금 - " + m);
 			balance -= m;
 			Exception ex = new Exception();
 			throw ex;
-		} catch (Exception e) {
-			System.out.println("C계좌 거래 에러 발생");
-			cancelC();
-		}
+		
 	}
 
 	public void cancelA() {
