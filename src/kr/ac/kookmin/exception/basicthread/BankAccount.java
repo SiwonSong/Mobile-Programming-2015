@@ -10,6 +10,7 @@ public class BankAccount {
 		balance -= amount;
 	}
 	
+	
 	public void add(int money) {
 		balance += money;
 		System.out.println("총합 : " + balance + " " + money + " 만큼 입금");

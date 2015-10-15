@@ -18,6 +18,7 @@ public class testMain {
 				}
 			}
 		};
+		
 		Thread withdrawMan = new Thread() {
 			public void run() {
 				while (true) {
